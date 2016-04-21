@@ -4,33 +4,244 @@
 	<meta charset="UTF-8">
 	<title>anippt</title>
 	<link rel="stylesheet" type="text/css" href="css/anippt.css">
+	<link rel="stylesheet" href="highlight/styles/default.css">
+	<script src="highlight/highlight.pack.js"></script>
+<script>
+hljs.configure({
+  tabReplace: '    ', // 4 spaces
+  classPrefix: ''     // don't append class prefix
+})
+hljs.initHighlightingOnLoad();
+</script>
 </head>
 <body>
 
+<div class="menu">
+    <ul>
+        <!-- <li><a href="">aaa</a></li>
+        <li><a href="">bbb</a></li>
+        <li><a href="">ccc</a></li> -->
+    </ul>
+</div>
+
 <div id="impress">
 
-    <div id="menu" class="step center">
+    <div id="ppt" class="step center">
+        <h1> pro6 总结 </h1>
+    </div>
+
+    <div id="sum" class="step">
     	<ul>
 	        <li class="item">想法</li>
-	        <li class="item">教训</li>
-	        <li class="item">技术</li>
+	        <li class="item">代码</li>
+            <li class="item">总结</li>
 	        <li class="item">改进</li>
 	    </ul>
     </div>
 
-    <div id="thought" class="step center">
+    <div id="thought" class="step">
+        <h2>想法</h2>
     	<ul>
-	        <li class="item">讨论</li>
+            <li class="item">讨论</li>
+	        <li class="item">叫产品经理给你多看网页</li>
 	        <li class="item">画画草图</li>
 	        <li class="item">看看 codepen </li>
 	    </ul>
     </div>
 
     <div id="perspective" class="step">
-        <h1>透视</h1>
-        <img src="img/shipingxian.jpg">
-        <img src="img/xiaoshidian.jpeg">
+        <h2>透视原理，理解立体效果</h2>
     </div>	
+
+
+    <div id="code" class="step">
+        <h2>代码实现</h2>
+        <li class="item">canvas</li>
+        <li class="item">svg</li>
+        <li class="item">滚动插件</li>       
+    </div>
+
+    <div id="canvas" class="step">
+        <h2>canvas</h2>
+    	<li class="item">动画函数 easing.js</li>
+    	<li class="item">性能优化 canvas</li>
+    	<li class="item">一些封装 </li>
+    </div>
+
+    <div id="easing" class="step">
+    	<h2>easing.js</h2>
+
+<pre><code class="javascript">
+easing.easingFun(t, b, c, d);
+// t: current time, 
+// b: begInnIng value, 
+// c: change In value, 
+// d: duration
+</code></pre>
+		<p class="block"><a target="_blank" href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a></p>
+    </div>
+
+
+    <!-- 离线 canvas -->
+	<div id="offline" class="step">
+		<h2>离线 canvas</h2>
+		<p>
+			如果需要大量重绘相似的物体， 可以通过预渲染场景中的大部分物体来提升性能。
+		</p>
+<pre><code class="javascript">		
+// 离线cvs
+var offLineCvs = document.createElement('canvas'),
+    offLineCtx = offLineCvs.getContext('2d');
+
+offLineCvs.width = 30;
+offLineCvs.height = 30;
+offLineCtx.drawSomething
+
+// 绘制 离线cvs
+ctx.drawImage(
+    offLineCvs,0,0,offLineCvs.width,offLineCvs.height,
+    pX, pY, pWidth, pHeight
+);
+</code></pre>
+
+	</div>
+
+    <!-- 其他 优化 -->
+    <div id="othercanvasoptimize" class="step">
+        <h2>其他优化方法</h2>
+        <p>将所有的点放到路径中会比分别单独的绘制各个部分要高效的多</p>
+
+<pre><code class="javascript">      
+// bad
+for (var i = 0; i < points.length - 1; i++) {  
+    var p1 = points[i];  
+    var p2 = points[i+1];  
+    context.beginPath();  
+    context.moveTo(p1.x, p1.y);  
+    context.lineTo(p2.x, p2.y);  
+    context.stroke();  
+}  
+// good 
+context.beginPath();  
+for (var i = 0; i < points.length - 1; i++) {  
+    var p1 = points[i];  
+    var p2 = points[i+1];  
+    context.moveTo(p1.x, p1.y);  
+    context.lineTo(p2.x, p2.y);  
+}  
+context.stroke();
+</code></pre>
+
+    </div>    
+    <div class="step">
+        <h2>其他优化方法</h2>
+        <p>浮点坐标转换为整数坐标</p>
+
+<pre><code class="javascript">      
+// bad
+ctx.fillRect(8.233333,8.233333,49.233333,50.233333);  
+// good 
+ctx.fillRect(
+    Math.round(8.233333), 
+    Math.round(8.233333),
+    Math.round(49.233333),
+    Math.round(50.233333)
+);  
+</code></pre>
+
+    </div>
+
+    <div class="step">
+        <h2>其他优化方法</h2>
+        <ul>
+            <li class="item">用requestAnimationFrame</li>
+            <li class="item">局部更新画布</li>
+            <li class="item">分解画面，使用多个canvas</li>
+        </ul>
+    </div>
+
+
+    <!-- svg -->
+    <div id="svg" class="step">
+        <h2>简单介绍一下svg</h2>
+        <p>SVG可缩放矢量图形（Scalable Vector Graphics）是基于可扩展标记语言（XML），用于描述二维矢量图形的一种图形格式。SVG是W3C制定的一种新的二维矢量图形格式，也是规范中的网络矢量图形标准。SVG严格遵从XML语法，并用文本格式的描述性语言来描述图像内容，因此是一种和图像分辨率无关的矢量图形格式。</p>
+        <img class="block" src="img/svg_support.png" alt="">
+    </div>    
+
+    <div class="step">
+        <h2>基本图形</h2>
+        <img class="block" src="img/svg.png">
+        <a target="_blank" href="http://codepen.io/JasonTurbo/pen/xVzoPY">
+            http://codepen.io/JasonTurbo/pen/xVzoPY
+        </a>
+    </div>        
+
+
+    <!-- mz-scroll -->
+    <div id="mz-scroll" class="step">
+        <h2>mz-scroll</h2>
+        <p>
+            官网产品页面，几乎所有动画都是滚动触发的，所以我写了个小插件帮忙处理滚动监听
+            请允许我安利一下。
+        </p>
+    </div>
+
+    <div class="step">
+        <h2>mz-scroll</h2>
+        <img src="img/mz-scroll.png">
+    </div>
+
+    <div class="step">
+        <h2>mz-scroll</h2>
+        <p>一个栗子</p>
+<pre><code class="javascript">
+/*
+ * options 配置 如果传false则删除此元素监听任务
+ *
+ * once {boolean} 是否执行一次 default false
+ * topOffset {int} 元素顶部到窗口底部的距离多少算进入区域 default 0
+ * bottomOffset {int} 元素底部到窗口顶部部的距离多少算进入区域 default 0
+ * setUp {function} 如需要做一些准备工作可以写在这里
+ * activeClass {string} 元素进入区域要添加的类
+ * scrollIn {function} 元素进入区域的回调
+ * scrollOut {function} 元素离开区域的回调
+ * scrolling {function(scrolloffset)} 元素处于激活状态时处理滚动的函数
+ */
+$('.slider').addScroll({
+    once: true,
+    topOffset: -500,
+    bottomOffset: -400,
+    activeClass: 'actived'
+});
+</code></pre>
+    </div>
+
+
+    <div id="modernizr" class="step">
+        <h2>兼容(modernizr)</h2>
+        <p>css</p>
+<pre><code class="stylesheet">
+.no-borderradius {
+    // 如果不支持 borderradius 怎样怎样
+}
+.no-canvas {
+    // 如果不支持 canvas 怎样怎样
+}
+</code></pre>
+        <p>js</p>
+
+<pre><code class="javascript">
+if (Modernizr.csstransitions) {
+    // 如果支持 transitions 怎样怎样
+}
+if (Modernizr.video) {
+    // 如果支持 video 怎样怎样
+}
+</code></pre>        
+    </div>    
+
+    <div id="overview" class="step" data-x="0" data-y="0" data-scale="2">
+    </div>
 </div>
 
 

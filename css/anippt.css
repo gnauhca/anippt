@@ -1,53 +1,323 @@
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+/* RESET*/
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, fieldset, input, abbr, article, aside, command, details, figcaption, figure, footer, header, hgroup, mark, meter, nav, output, progress, section, summary, time {
   margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline; }
+  padding: 0; }
 
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
-  display: block; }
+h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong, th, figcaption {
+  font-size: 1em;
+  font-weight: normal;
+  font-style: normal; }
 
-body {
-  line-height: 1; }
+fieldset, iframe {
+  border: none; }
 
-ol, ul {
-  list-style: none; }
-
-blockquote, q {
-  quotes: none; }
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none; }
+caption, th {
+  text-align: left; }
 
 table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/*
-    Now here is when interesting things start to appear.
+article, aside, footer, header, hgroup, nav, section, figure, figcaption {
+  display: block; }
 
-    We set up <body> styles with default font and nice gradient in the background.
-    And yes, there is a lot of repetition there because of -prefixes but we don't
-    want to leave anybody behind.
-*/
+/* LAYOUT */
+* {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+
+html {
+  background-color: #fff; }
+
+.clear {
+  clear: both; }
+
+.clearer {
+  clear: both;
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  line-height: 1px;
+  font-size: 1px; }
+
+.selfclear {
+  zoom: 1; }
+
+.selfclear:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+
+img {
+  border: 0; }
+
+a {
+  text-decoration: none;
+  color: #515151; }
+  a:focus {
+    outline: none; }
+
+i {
+  font-style: normal; }
+
+ul, li {
+  list-style: none; }
+
+.mac body {
+  font-family: "microsoft yahei"; }
+
+.slider h1, .slider h2 {
+  font-family: "microsoft yahei"; }
+
+.swiper-slide h1, .swiper-slide h2, .swiper-slide h3, .swiper-slide .next-desc {
+  font-family: "microsoft yahei"; }
+
+p {
+  max-height: 100%; }
+
+.fm-syht, .notIE .notIE-syht {
+  font-family: "microsoft yahei"; }
+
+body {
+  font: 14px/1.5 "microsoft yahei";
+  color: #515151; }
+
+.clearfix:after, .clearfix:before {
+  content: "";
+  display: table;
+  height: 0px;
+  clear: both;
+  visibility: hidden; }
+
+.clearfix {
+  *zoom: 1; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.br0 {
+  border: none; }
+
+.key-color {
+  color: #333; }
+
+.maim-color {
+  color: #666; }
+
+.auxiliary-color {
+  color: #999; }
+
+/* GIRD*/
+.row {
+  letter-spacing: -0.31em;
+  *letter-spacing: normal;
+  *word-spacing: -0.43em;
+  text-rendering: optimizespeed;
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  display: -ms-flexbox;
+  -ms-flex-flow: row wrap; }
+
+.row {
+  word-spacing: -0.43em; }
+
+.col-1,
+.col-1-1,
+.col-1-2,
+.col-1-3,
+.col-2-3,
+.col-1-4,
+.col-3-4,
+.col-1-5,
+.col-2-5,
+.col-3-5,
+.col-4-5,
+.col-5-5,
+.col-1-6,
+.col-5-6,
+.col-1-8,
+.col-3-8,
+.col-5-8,
+.col-7-8,
+.col-1-12,
+.col-5-12,
+.col-7-12,
+.col-11-12,
+.col-1-24,
+.col-2-24,
+.col-3-24,
+.col-4-24,
+.col-5-24,
+.col-6-24,
+.col-7-24,
+.col-8-24,
+.col-9-24,
+.col-10-24,
+.col-11-24,
+.col-12-24,
+.col-13-24,
+.col-14-24,
+.col-15-24,
+.col-16-24,
+.col-17-24,
+.col-18-24,
+.col-19-24,
+.col-20-24,
+.col-21-24,
+.col-22-24,
+.col-23-24,
+.col-24-24 {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  letter-spacing: normal;
+  word-spacing: normal;
+  vertical-align: top;
+  text-rendering: auto; }
+
+.col-1-24 {
+  width: 4.1667%;
+  *width: 4.1357%; }
+
+.col-1-12,
+.col-2-24 {
+  width: 8.3333%;
+  *width: 8.3023%; }
+
+.col-1-8,
+.col-3-24 {
+  width: 12.5000%;
+  *width: 12.4690%; }
+
+.col-1-6,
+.col-4-24 {
+  width: 16.6667%;
+  *width: 16.6357%; }
+
+.col-1-5 {
+  width: 20%;
+  *width: 19.9690%; }
+
+.col-5-24 {
+  width: 20.8333%;
+  *width: 20.8023%; }
+
+.col-1-4,
+.col-6-24 {
+  width: 25%;
+  *width: 24.9690%; }
+
+.col-7-24 {
+  width: 29.1667%;
+  *width: 29.1357%; }
+
+.col-1-3,
+.col-8-24 {
+  width: 33.3333%;
+  *width: 33.3023%; }
+
+.col-3-8,
+.col-9-24 {
+  width: 37.5000%;
+  *width: 37.4690%; }
+
+.col-2-5 {
+  width: 40%;
+  *width: 39.9690%; }
+
+.col-5-12,
+.col-10-24 {
+  width: 41.6667%;
+  *width: 41.6357%; }
+
+.col-11-24 {
+  width: 45.8333%;
+  *width: 45.8023%; }
+
+.col-1-2,
+.col-12-24 {
+  width: 50%;
+  *width: 49.95%; }
+
+.col-13-24 {
+  width: 54.1667%;
+  *width: 54.1357%; }
+
+.col-7-12,
+.col-14-24 {
+  width: 58.3333%;
+  *width: 58.3023%; }
+
+.col-3-5 {
+  width: 60%;
+  *width: 59.9690%; }
+
+.col-5-8,
+.col-15-24 {
+  width: 62.5000%;
+  *width: 62.4690%; }
+
+.col-2-3,
+.col-16-24 {
+  width: 66.6667%;
+  *width: 66.6357%; }
+
+.col-17-24 {
+  width: 70.8333%;
+  *width: 70.8023%; }
+
+.col-3-4,
+.col-18-24 {
+  width: 75%;
+  *width: 74.9690%; }
+
+.col-19-24 {
+  width: 79.1667%;
+  *width: 79.1357%; }
+
+.col-4-5 {
+  width: 80%;
+  *width: 79.9690%; }
+
+.col-5-6,
+.col-20-24 {
+  width: 83.3333%;
+  *width: 83.3023%; }
+
+.col-7-8,
+.col-21-24 {
+  width: 87.5000%;
+  *width: 87.4690%; }
+
+.col-11-12,
+.col-22-24 {
+  width: 91.6667%;
+  *width: 91.6357%; }
+
+.col-23-24 {
+  width: 95.8333%;
+  *width: 95.8023%; }
+
+.col-1,
+.col-1-1,
+.col-5-5,
+.col-24-24 {
+  width: 100%; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
 body {
   font-family: 'microsoft yahei', sans-serif;
   min-height: 740px;
@@ -70,15 +340,14 @@ a {
   color: inherit;
   text-decoration: none;
   padding: 0 0.1em;
-  background: rgba(255, 255, 255, 0.5);
   text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.9);
   border-radius: 0.2em;
+  color: #abcdef;
   transition: 0.5s; }
 
 a:hover,
 a:focus {
-  background: white;
-  text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.5); }
+  text-shadow: -1px -1px 2px rgba(25, 25, 25, 0.5); }
 
 /*
     Because the main point behind the impress.js demo is to demo impress.js
@@ -88,7 +357,6 @@ a:focus {
     All of the content will be still fully accessible for them, but I want
     them to know that they are missing something - that's what the demo is
     about, isn't it?
-
     And then we hide the message, when support is detected in the browser.
 */
 .step {
@@ -104,9 +372,19 @@ a:focus {
     line-height: 2; }
   .step h2 {
     font-size: 36px;
-    line-height: 1.5; }
+    line-height: 2; }
+  .step p {
+    font-size: 22px;
+    line-height: 1.6; }
+  .step code {
+    font-size: 20px;
+    margin: 20px 0; }
+  .step .block {
+    margin: 20px 0; }
   .step.center, .step .center {
     text-align: center; }
+  .step img {
+    max-width: 100%; }
 
 /*
     ... and we enhance the styles for impress.js.
@@ -115,32 +393,37 @@ a:focus {
 */
 .impress-enabled .step {
   margin: 0;
-  opacity: 0.1;
+  opacity: 0.02;
   transition: opacity 1s; }
 
 .impress-enabled .step.active {
   opacity: 1; }
 
-.step .item:nth-child(1) {
-  transition: transform 1s 0.2s, opacity 1s 0.2s; }
-.step .item:nth-child(2) {
-  transition: transform 1s 0.4s, opacity 1s 0.4s; }
-.step .item:nth-child(3) {
-  transition: transform 1s 0.6s, opacity 1s 0.6s; }
-.step .item:nth-child(4) {
-  transition: transform 1s 0.8s, opacity 1s 0.8s; }
-.step .item:nth-child(5) {
-  transition: transform 1s 1s, opacity 1s 1s; }
-.step .item:nth-child(6) {
-  transition: transform 1s 1.2s, opacity 1s 1.2s; }
-.step .item:nth-child(7) {
-  transition: transform 1s 1.4s, opacity 1s 1.4s; }
-.step .item:nth-child(8) {
-  transition: transform 1s 1.6s, opacity 1s 1.6s; }
-.step .item:nth-child(9) {
-  transition: transform 1s 1.8s, opacity 1s 1.8s; }
-.step .item:nth-child(10) {
-  transition: transform 1s 2s, opacity 1s 2s; }
+.impress-on-overview .step {
+  opacity: 0.5; }
+
+.step .item {
+  list-style: disc; }
+  .step .item:nth-child(1) {
+    transition: transform 1s 0.2s, opacity 1s 0.2s; }
+  .step .item:nth-child(2) {
+    transition: transform 1s 0.4s, opacity 1s 0.4s; }
+  .step .item:nth-child(3) {
+    transition: transform 1s 0.6s, opacity 1s 0.6s; }
+  .step .item:nth-child(4) {
+    transition: transform 1s 0.8s, opacity 1s 0.8s; }
+  .step .item:nth-child(5) {
+    transition: transform 1s 1s, opacity 1s 1s; }
+  .step .item:nth-child(6) {
+    transition: transform 1s 1.2s, opacity 1s 1.2s; }
+  .step .item:nth-child(7) {
+    transition: transform 1s 1.4s, opacity 1s 1.4s; }
+  .step .item:nth-child(8) {
+    transition: transform 1s 1.6s, opacity 1s 1.6s; }
+  .step .item:nth-child(9) {
+    transition: transform 1s 1.8s, opacity 1s 1.8s; }
+  .step .item:nth-child(10) {
+    transition: transform 1s 2s, opacity 1s 2s; }
 
 .step.active .item {
   opacity: 1;
@@ -177,5 +460,119 @@ a:focus {
 
 .slide q strong {
   white-space: nowrap; }
+
+.menu {
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  padding: 30px; }
+  .menu ul li {
+    line-height: 30px;
+    font-size: 18px;
+    opacity: 0;
+    transform: translateY(50px); }
+    .menu ul li:nth-child(1) {
+      transition: transform 0.5s 0.03s, opacity 0.5s 0.03s; }
+    .menu ul li:nth-child(2) {
+      transition: transform 0.5s 0.06s, opacity 0.5s 0.06s; }
+    .menu ul li:nth-child(3) {
+      transition: transform 0.5s 0.09s, opacity 0.5s 0.09s; }
+    .menu ul li:nth-child(4) {
+      transition: transform 0.5s 0.12s, opacity 0.5s 0.12s; }
+    .menu ul li:nth-child(5) {
+      transition: transform 0.5s 0.15s, opacity 0.5s 0.15s; }
+    .menu ul li:nth-child(6) {
+      transition: transform 0.5s 0.18s, opacity 0.5s 0.18s; }
+    .menu ul li:nth-child(7) {
+      transition: transform 0.5s 0.21s, opacity 0.5s 0.21s; }
+    .menu ul li:nth-child(8) {
+      transition: transform 0.5s 0.24s, opacity 0.5s 0.24s; }
+    .menu ul li:nth-child(9) {
+      transition: transform 0.5s 0.27s, opacity 0.5s 0.27s; }
+    .menu ul li:nth-child(10) {
+      transition: transform 0.5s 0.3s, opacity 0.5s 0.3s; }
+    .menu ul li:nth-child(11) {
+      transition: transform 0.5s 0.33s, opacity 0.5s 0.33s; }
+    .menu ul li:nth-child(12) {
+      transition: transform 0.5s 0.36s, opacity 0.5s 0.36s; }
+    .menu ul li:nth-child(13) {
+      transition: transform 0.5s 0.39s, opacity 0.5s 0.39s; }
+    .menu ul li:nth-child(14) {
+      transition: transform 0.5s 0.42s, opacity 0.5s 0.42s; }
+    .menu ul li:nth-child(15) {
+      transition: transform 0.5s 0.45s, opacity 0.5s 0.45s; }
+    .menu ul li:nth-child(16) {
+      transition: transform 0.5s 0.48s, opacity 0.5s 0.48s; }
+    .menu ul li:nth-child(17) {
+      transition: transform 0.5s 0.51s, opacity 0.5s 0.51s; }
+    .menu ul li:nth-child(18) {
+      transition: transform 0.5s 0.54s, opacity 0.5s 0.54s; }
+    .menu ul li:nth-child(19) {
+      transition: transform 0.5s 0.57s, opacity 0.5s 0.57s; }
+    .menu ul li:nth-child(20) {
+      transition: transform 0.5s 0.6s, opacity 0.5s 0.6s; }
+    .menu ul li:nth-child(21) {
+      transition: transform 0.5s 0.63s, opacity 0.5s 0.63s; }
+    .menu ul li:nth-child(22) {
+      transition: transform 0.5s 0.66s, opacity 0.5s 0.66s; }
+    .menu ul li:nth-child(23) {
+      transition: transform 0.5s 0.69s, opacity 0.5s 0.69s; }
+    .menu ul li:nth-child(24) {
+      transition: transform 0.5s 0.72s, opacity 0.5s 0.72s; }
+    .menu ul li:nth-child(25) {
+      transition: transform 0.5s 0.75s, opacity 0.5s 0.75s; }
+    .menu ul li:nth-child(26) {
+      transition: transform 0.5s 0.78s, opacity 0.5s 0.78s; }
+    .menu ul li:nth-child(27) {
+      transition: transform 0.5s 0.81s, opacity 0.5s 0.81s; }
+    .menu ul li:nth-child(28) {
+      transition: transform 0.5s 0.84s, opacity 0.5s 0.84s; }
+    .menu ul li:nth-child(29) {
+      transition: transform 0.5s 0.87s, opacity 0.5s 0.87s; }
+    .menu ul li:nth-child(30) {
+      transition: transform 0.5s 0.9s, opacity 0.5s 0.9s; }
+    .menu ul li:nth-child(31) {
+      transition: transform 0.5s 0.93s, opacity 0.5s 0.93s; }
+    .menu ul li:nth-child(32) {
+      transition: transform 0.5s 0.96s, opacity 0.5s 0.96s; }
+    .menu ul li:nth-child(33) {
+      transition: transform 0.5s 0.99s, opacity 0.5s 0.99s; }
+    .menu ul li:nth-child(34) {
+      transition: transform 0.5s 1.02s, opacity 0.5s 1.02s; }
+    .menu ul li:nth-child(35) {
+      transition: transform 0.5s 1.05s, opacity 0.5s 1.05s; }
+    .menu ul li:nth-child(36) {
+      transition: transform 0.5s 1.08s, opacity 0.5s 1.08s; }
+    .menu ul li:nth-child(37) {
+      transition: transform 0.5s 1.11s, opacity 0.5s 1.11s; }
+    .menu ul li:nth-child(38) {
+      transition: transform 0.5s 1.14s, opacity 0.5s 1.14s; }
+    .menu ul li:nth-child(39) {
+      transition: transform 0.5s 1.17s, opacity 0.5s 1.17s; }
+    .menu ul li:nth-child(40) {
+      transition: transform 0.5s 1.2s, opacity 0.5s 1.2s; }
+    .menu ul li:nth-child(41) {
+      transition: transform 0.5s 1.23s, opacity 0.5s 1.23s; }
+    .menu ul li:nth-child(42) {
+      transition: transform 0.5s 1.26s, opacity 0.5s 1.26s; }
+    .menu ul li:nth-child(43) {
+      transition: transform 0.5s 1.29s, opacity 0.5s 1.29s; }
+    .menu ul li:nth-child(44) {
+      transition: transform 0.5s 1.32s, opacity 0.5s 1.32s; }
+    .menu ul li:nth-child(45) {
+      transition: transform 0.5s 1.35s, opacity 0.5s 1.35s; }
+    .menu ul li:nth-child(46) {
+      transition: transform 0.5s 1.38s, opacity 0.5s 1.38s; }
+    .menu ul li:nth-child(47) {
+      transition: transform 0.5s 1.41s, opacity 0.5s 1.41s; }
+    .menu ul li:nth-child(48) {
+      transition: transform 0.5s 1.44s, opacity 0.5s 1.44s; }
+    .menu ul li:nth-child(49) {
+      transition: transform 0.5s 1.47s, opacity 0.5s 1.47s; }
+
+.menu-show .menu ul li {
+  opacity: 1;
+  transform: none; }
 
 /*# sourceMappingURL=anippt.css.map */

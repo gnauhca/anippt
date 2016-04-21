@@ -6,12 +6,15 @@ caption,th {text-align: left; }
 table {border-collapse: collapse; border-spacing: 0; }
 article,aside,footer,header,hgroup,nav,section,figure,figcaption {display: block; }
 
-
 /* LAYOUT */
 * {
   margin: 0;
   padding: 0;
 }
+
+
+$fontFamily: 'microsoft yahei';
+$fontFamilyForMac: 'microsoft yahei';
 
 html, body {width: 100%;height: 100%;position: relative; }
 html {background-color:#fff; }
@@ -45,7 +48,6 @@ body {font:14px/1.5 $fontFamily;color: #515151; }
 .key-color { color: #333; }
 .maim-color { color: #666; }
 .auxiliary-color { color: #999; }
-
 /* GIRD*/
 .row {
   letter-spacing: -0.31em;
