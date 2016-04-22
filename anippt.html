@@ -83,7 +83,11 @@ easing.easingFun(t, b, c, d);
 
 
     <!-- 离线 canvas -->
-	<div id="offline" class="step">
+    <div id="canvasoptimizer" class="step">
+        <h2>canvas 优化</h2>  
+    </div>
+
+	<div class="step">
 		<h2>离线 canvas</h2>
 		<p>
 			如果需要大量重绘相似的物体， 可以通过预渲染场景中的大部分物体来提升性能。
@@ -103,12 +107,11 @@ ctx.drawImage(
     pX, pY, pWidth, pHeight
 );
 </code></pre>
-
 	</div>
 
     <!-- 其他 优化 -->
     <div id="othercanvasoptimize" class="step">
-        <h2>其他优化方法</h2>
+        <h2>一条路径经可能多画内容</h2>
         <p>将所有的点放到路径中会比分别单独的绘制各个部分要高效的多</p>
 
 <pre><code class="javascript">      
@@ -134,8 +137,7 @@ context.stroke();
 
     </div>    
     <div class="step">
-        <h2>其他优化方法</h2>
-        <p>浮点坐标转换为整数坐标</p>
+        <h2>浮点坐标转换为整数坐标</h2>
 
 <pre><code class="javascript">      
 // bad
@@ -181,8 +183,7 @@ ctx.fillRect(
     <div id="mz-scroll" class="step">
         <h2>mz-scroll</h2>
         <p>
-            官网产品页面，几乎所有动画都是滚动触发的，所以我写了个小插件帮忙处理滚动监听
-            请允许我安利一下。
+            官网产品页面，几乎所有动画都是滚动触发的，所以我写了个小插件帮忙处理滚动监听。
         </p>
     </div>
 
@@ -218,7 +219,7 @@ $('.slider').addScroll({
 
 
     <div id="modernizr" class="step">
-        <h2>兼容(modernizr)</h2>
+        <h2>兼容</h2>
         <p>css</p>
 <pre><code class="stylesheet">
 .no-borderradius {
