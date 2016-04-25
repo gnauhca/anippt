@@ -58,7 +58,7 @@ hljs.initHighlightingOnLoad();
         <h2>代码实现</h2>
         <li class="item">canvas</li>
         <li class="item">svg</li>
-        <li class="item">滚动插件</li>       
+        <li class="item">css 动画</li>       
     </div>
 
     <div id="canvas" class="step">
@@ -135,7 +135,8 @@ for (var i = 0; i < points.length - 1; i++) {
 context.stroke();
 </code></pre>
 
-    </div>    
+    </div> 
+
     <div class="step">
         <h2>浮点坐标转换为整数坐标</h2>
 
@@ -163,6 +164,16 @@ ctx.fillRect(
     </div>
 
 
+    <div class="step">
+        <h2>适用于官网页面的优化</h2>
+
+        <p>
+            官网页面使用的 canvas 动画，不同于 canvas 应用，需要一直展示。只要在该屏出现的时候，运行即可。而在该屏离开屏幕的时候，应该要停止操作这一屏的 canvas，这样可以避免不必要的性能开销。</p>
+        <a target="_blank" href="http://codepen.io/JasonTurbo/pen/PNReQQ">
+            https://codepen.io/JasonTurbo/pen/PNReQQ
+        </a>
+    </div>
+
     <!-- svg -->
     <div id="svg" class="step">
         <h2>简单介绍一下svg</h2>
@@ -174,16 +185,40 @@ ctx.fillRect(
         <h2>基本图形</h2>
         <img class="block" src="img/svg.png">
         <a target="_blank" href="http://codepen.io/JasonTurbo/pen/xVzoPY">
-            http://codepen.io/JasonTurbo/pen/xVzoPY
+            https://codepen.io/JasonTurbo/pen/xVzoPY
         </a>
     </div>        
+
+
+
+    <div id="cssanimate" class="step">
+        <h2>css 动画</h2>
+        <p>css动画比较简单，主要形式是先让动画元素移动运动到指定位置。当该元素被浏览（激活），则将运动重写为none。这里可以通过给被激活元素（或父级元素加上特定的类）实现。</p>
+<pre><code  class="css">
+.ani-elem {
+    left: 109px;
+    // for animate
+    opacity: 0;
+    transform: sometransform;
+    transition: transform 1s 1s, opacity  1s 1s;
+}   
+.actived .ani-elem {
+    opacity: 1;
+    transform: none;
+}
+</code></pre>
+
+    </div>
 
 
     <!-- mz-scroll -->
     <div id="mz-scroll" class="step">
         <h2>mz-scroll</h2>
         <p>
-            官网产品页面，几乎所有动画都是滚动触发的，所以我写了个小插件帮忙处理滚动监听。
+            官网产品页面，几乎所有动画都是滚动触发的。为了方便，所以写了个小插件帮忙处理滚动监听。
+            <a href="https://github.com/mz-components/mz-scroll">
+                https://github.com/mz-components/mz-scroll
+            </a>
         </p>
     </div>
 
@@ -216,6 +251,7 @@ $('.slider').addScroll({
 });
 </code></pre>
     </div>
+
 
 
     <div id="modernizr" class="step">
