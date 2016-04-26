@@ -27,38 +27,54 @@ hljs.initHighlightingOnLoad();
 <div id="impress">
 
     <div id="ppt" class="step center">
-        <h1> pro6 总结 </h1>
+        <h1> pro6 总结 （动画）</h1>
     </div>
 
     <div id="sum" class="step">
+        <h2> 目录 </h2>
     	<ul>
-	        <li class="item">想法</li>
-	        <li class="item">代码</li>
-            <li class="item">总结</li>
-	        <li class="item">改进</li>
+	        <li class="item">想法来源</li>
+            <li class="item">代码讲解</li>
+	        <li class="item">技术总结</li>
 	    </ul>
     </div>
 
     <div id="thought" class="step">
         <h2>想法</h2>
     	<ul>
-            <li class="item">讨论</li>
-	        <li class="item">叫产品经理给你多看网页</li>
-	        <li class="item">画画草图</li>
-	        <li class="item">看看 codepen </li>
+            <li class="item">从文案出发</li>
+            <li class="item">与大家讨论</li>
+            <li class="item">从生活联想</li>
+	        <li class="item">画草图思考</li>
+	        <li class="item">逛 codepen</li>
 	    </ul>
     </div>
 
     <div id="perspective" class="step">
-        <h2>透视原理，理解立体效果</h2>
-    </div>	
+        <h2>一点点透视原理</h2>
+        <img class="block" src="img/xiaoshidian.png">
+        <a href="https://mp.weixin.qq.com/s?__biz=MzA5NjIzNjgxNw==&mid=403955067&idx=4&sn=c192799a8df373915708c5acc32b645a&scene=1&srcid=0420ZDZtUSfPNZr6fgFlZGeO&key=b28b03434249256bbc6467dbe955493fd9ab4fed7d8f8c35e074744b48e36ac728c809e1360441f21e2b483f8ce73c62&ascene=0&uin=NjYwMDUxMDU%3D&devicetype=iMac15%2C1+OSX+OSX+10.10.5+build(14F27)&version=11020201&pass_ticket=AWF6tLHfJtYBYiVgqelno9FhvN%2FfQ2iocwsWOgW3674%3D">干货！一个帖子学会透视原理！</a>
+    </div>
+
+    <div class="step">
+        <img src="img/shipingxian.png">
+    </div>
+    <div class="step">
+        <img src="img/pararel.png">
+    </div>
 
 
     <div id="code" class="step">
-        <h2>代码实现</h2>
+        <h2>代码讲解</h2>
+    </div>
+
+
+    <div id="techSum" class="step">
+        <h2>技术总结</h2>
         <li class="item">canvas</li>
         <li class="item">svg</li>
         <li class="item">css 动画</li>       
+        <li class="item">兼容</li>       
     </div>
 
     <div id="canvas" class="step">
@@ -111,7 +127,7 @@ ctx.drawImage(
 
     <!-- 其他 优化 -->
     <div id="othercanvasoptimize" class="step">
-        <h2>一条路径经可能多画内容</h2>
+        <h2>尽量在一条路径中做更多的事</h2>
         <p>将所有的点放到路径中会比分别单独的绘制各个部分要高效的多</p>
 
 <pre><code class="javascript">      
@@ -157,7 +173,7 @@ ctx.fillRect(
     <div class="step">
         <h2>其他优化方法</h2>
         <ul>
-            <li class="item">用requestAnimationFrame</li>
+            <li class="item">requestAnimationFrame 代替 setTimeout</li>
             <li class="item">局部更新画布</li>
             <li class="item">分解画面，使用多个canvas</li>
         </ul>
@@ -165,7 +181,7 @@ ctx.fillRect(
 
 
     <div class="step">
-        <h2>适用于官网页面的优化</h2>
+        <h2>适用于官网页面形式的 canvas 优化</h2>
 
         <p>
             官网页面使用的 canvas 动画，不同于 canvas 应用，需要一直展示。只要在该屏出现的时候，运行即可。而在该屏离开屏幕的时候，应该要停止操作这一屏的 canvas，这样可以避免不必要的性能开销。</p>
@@ -193,7 +209,7 @@ ctx.fillRect(
 
     <div id="cssanimate" class="step">
         <h2>css 动画</h2>
-        <p>css动画比较简单，主要形式是先让动画元素移动运动到指定位置。当该元素被浏览（激活），则将运动重写为none。这里可以通过给被激活元素（或父级元素加上特定的类）实现。</p>
+        <p>css动画比较简单，主要形式是先让动画元素变换到指定位置。当该元素被浏览（激活），则将变换重写为none。这里可以通过给被激活元素（或父级元素加上特定的类）实现。</p>
 <pre><code  class="css">
 .ani-elem {
     left: 109px;
@@ -215,7 +231,9 @@ ctx.fillRect(
     <div id="mz-scroll" class="step">
         <h2>mz-scroll</h2>
         <p>
-            官网产品页面，几乎所有动画都是滚动触发的。为了方便，所以写了个小插件帮忙处理滚动监听。
+            官网产品页面，几乎所有动画都是滚动触发的。
+            为了方便，所以写了个小插件帮忙处理滚动监听。
+            然后页面就可以不用关心滚动逻辑而专注于 css 动画了。
             <a href="https://github.com/mz-components/mz-scroll">
                 https://github.com/mz-components/mz-scroll
             </a>
@@ -255,7 +273,7 @@ $('.slider').addScroll({
 
 
     <div id="modernizr" class="step">
-        <h2>兼容</h2>
+        <h2>使用 Modernizr 特性检测做兼容</h2>
         <p>css</p>
 <pre><code class="stylesheet">
 .no-borderradius {
@@ -274,11 +292,12 @@ if (Modernizr.csstransitions) {
 if (Modernizr.video) {
     // 如果支持 video 怎样怎样
 }
-</code></pre>        
+</code></pre>   
+        <a href="https://modernizr.com/">https://modernizr.com/</a>     
     </div>    
 
-    <div id="overview" class="step" data-x="0" data-y="0" data-scale="2">
-    </div>
+
+    <!-- <div id="overview" class="step" data-x="0" data-y="0" data-scale="2"></div> -->
 </div>
 
 

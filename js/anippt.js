@@ -17,11 +17,11 @@ function sign() {
 	return (Math.random() > 0.5 ? 1 : -1);
 }
 $('.step').each(function() {
-	offset['data-x'] = sign() * winWidth;
-	offset['data-y'] = sign() * winHeight;
+	offset['data-x'] = /*sign() * */winWidth*2;
+	offset['data-y'] = sign() * winHeight*2;
 	offset['data-rotate-x'] = sign() * /*parseInt*/(Math.random()*2) * 90;
-	offset['data-rotate-y'] = sign() * /*parseInt*/(Math.random()*2) * 90;
-	offset['data-rotate-z'] = sign() * /*parseInt*/(Math.random()*2) * 90;
+	offset['data-rotate-y'] = sign() * parseInt(Math.random()*2) * 90;
+	offset['data-rotate-z'] = sign() * parseInt(Math.random()*2) * 90;
 	//offset['data-rotate'] = sign() * /*parseInt*/(Math.random()*2) * 90;
 
 	for (key in transformData) {
@@ -31,7 +31,7 @@ $('.step').each(function() {
 
 	// add menu
 	if (this.id) {
-		$('.menu ul').append('<li><a href="#'+this.id+'">'+this.id+'</a></li>');
+		$('.menu ul').append('<li><a href="#'+this.id+'">'+$(this).find('h1,h2').text()+'</a></li>');
 	}
 });
 
@@ -39,7 +39,7 @@ $('.step').each(function() {
 // menu 
 $(document).on('mousemove', function(e) {
 	if (e.clientX < 100 && e.clientY < 100) {
-		$('body').addClass('menu-show');
+		$('body').addClass('menu-show')
 	}
 });
 $('.menu').hover(function() {}, function() {
