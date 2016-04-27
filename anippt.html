@@ -27,7 +27,7 @@ hljs.initHighlightingOnLoad();
 <div id="impress">
 
     <div id="ppt" class="step center">
-        <h1> pro6 总结 （动画）</h1>
+        <h1> PRO 6 动画总结</h1>
     </div>
 
     <div id="sum" class="step">
@@ -46,26 +46,90 @@ hljs.initHighlightingOnLoad();
             <li class="item">与大家讨论</li>
             <li class="item">从生活联想</li>
 	        <li class="item">画草图思考</li>
-	        <li class="item">逛 codepen</li>
+	        <li class="item">codepen</li>
 	    </ul>
     </div>
 
     <div id="perspective" class="step">
         <h2>一点点透视原理</h2>
-        <img class="block" src="img/xiaoshidian.png">
+        <img src="img/xiaoshidian.png">
         <a href="https://mp.weixin.qq.com/s?__biz=MzA5NjIzNjgxNw==&mid=403955067&idx=4&sn=c192799a8df373915708c5acc32b645a&scene=1&srcid=0420ZDZtUSfPNZr6fgFlZGeO&key=b28b03434249256bbc6467dbe955493fd9ab4fed7d8f8c35e074744b48e36ac728c809e1360441f21e2b483f8ce73c62&ascene=0&uin=NjYwMDUxMDU%3D&devicetype=iMac15%2C1+OSX+OSX+10.10.5+build(14F27)&version=11020201&pass_ticket=AWF6tLHfJtYBYiVgqelno9FhvN%2FfQ2iocwsWOgW3674%3D">干货！一个帖子学会透视原理！</a>
     </div>
 
     <div class="step">
         <img src="img/shipingxian.png">
+        <img class="block" src="img/xiaoshidian2.png">
     </div>
     <div class="step">
-        <img src="img/pararel.png">
+        <img src="img/citytoushi.png">
     </div>
 
 
     <div id="code" class="step">
         <h2>代码讲解</h2>
+    </div>
+
+    <div class="step">
+        <img src="img/pro6cut1.png">
+        <a target="_blank" href="https://codepen.io/lichenbuliren/pen/oxqEPM">
+            https://codepen.io/lichenbuliren/pen/oxqEPM
+        </a>
+    </div>
+
+    <div class="step">
+        <img src="img/pro6cut3.png">
+        <a target="_blank" href="http://codepen.io/JasonTurbo/pen/LNJqBG">
+            http://codepen.io/JasonTurbo/pen/LNJqBG
+        </a>
+    </div>
+
+    <div class="step">
+        <img src="img/pro6cut6.png">
+        <a target="_blank" href="http://codepen.io/JasonTurbo/pen/ZWMwmZ">
+            http://codepen.io/JasonTurbo/pen/ZWMwmZ
+        </a>
+    </div>
+
+    <div class="step">
+        <img src="img/pro6cut8.png">
+        <a target="_blank" href="http://codepen.io/JasonTurbo/pen/jqvdXe">
+            http://codepen.io/JasonTurbo/pen/jqvdXe
+        </a>
+    </div>
+
+    <div class="step">
+        <img src="img/pro6cut9.png">
+        <a target="_blank" href="http://www.meizu.com/products/pro6/gallery.html">
+            http://www.meizu.com/products/pro6/gallery.html
+        </a>
+    </div>
+    
+    <div class="step">
+        <img src="img/pro6cut4.png">
+        <a target="_blank" href="http://codepen.io/JasonTurbo/pen/YqOBOp">
+            http://codepen.io/JasonTurbo/pen/YqOBOp
+        </a>
+    </div>
+
+    <div class="step">
+        <img src="img/pro6cut7.png">
+        <a target="_blank" href="http://codepen.io/JasonTurbo/pen/mPxLQp">
+            http://codepen.io/JasonTurbo/pen/mPxLQp
+        </a>
+    </div>
+
+    <div class="step">
+        <img src="img/pro6cut2.png">
+        <a target="_blank" href="https://codepen.io/JasonTurbo/pen/aNYGRN">
+            https://codepen.io/JasonTurbo/pen/aNYGRN
+        </a>
+    </div>
+
+    <div class="step">
+        <img src="img/pro6cut5.png">
+        <a target="_blank" href="http://codepen.io/JasonTurbo/pen/eZExGb">
+            http://codepen.io/JasonTurbo/pen/eZExGb
+        </a>
     </div>
 
 
@@ -84,7 +148,7 @@ hljs.initHighlightingOnLoad();
     	<li class="item">一些封装 </li>
     </div>
 
-    <div id="easing" class="step">
+    <div class="step">
     	<h2>easing.js</h2>
 
 <pre><code class="javascript">
@@ -94,7 +158,7 @@ easing.easingFun(t, b, c, d);
 // c: change In value, 
 // d: duration
 </code></pre>
-		<p class="block"><a target="_blank" href="http://gsgd.co.uk/sandbox/jquery/easing/">http://gsgd.co.uk/sandbox/jquery/easing/</a></p>
+		<p class="block"><a target="_blank" href="https://github.com/gdsmith/jquery.easing/blob/master/jquery.easing.js">https://github.com/gdsmith/jquery.easing/blob/master/jquery.easing.js</a></p>
     </div>
 
 
@@ -106,7 +170,7 @@ easing.easingFun(t, b, c, d);
 	<div class="step">
 		<h2>离线 canvas</h2>
 		<p>
-			如果需要大量重绘相似的物体， 可以通过预渲染场景中的大部分物体来提升性能。
+			需要大量重绘相似的物体，可以通过预渲染场景中的重复出现的物体来提升性能。
 		</p>
 <pre><code class="javascript">		
 // 离线cvs
@@ -126,7 +190,7 @@ ctx.drawImage(
 	</div>
 
     <!-- 其他 优化 -->
-    <div id="othercanvasoptimize" class="step">
+    <div class="step">
         <h2>尽量在一条路径中做更多的事</h2>
         <p>将所有的点放到路径中会比分别单独的绘制各个部分要高效的多</p>
 
@@ -140,6 +204,7 @@ for (var i = 0; i < points.length - 1; i++) {
     context.lineTo(p2.x, p2.y);  
     context.stroke();  
 }  
+
 // good 
 context.beginPath();  
 for (var i = 0; i < points.length - 1; i++) {  
@@ -159,12 +224,13 @@ context.stroke();
 <pre><code class="javascript">      
 // bad
 ctx.fillRect(8.233333,8.233333,49.233333,50.233333);  
+
 // good 
 ctx.fillRect(
-    Math.round(8.233333), 
-    Math.round(8.233333),
-    Math.round(49.233333),
-    Math.round(50.233333)
+    8.233333|0, 
+    8.233333|0,
+    49.233333|0,
+    50.233333|0
 );  
 </code></pre>
 
@@ -193,17 +259,17 @@ ctx.fillRect(
     <!-- svg -->
     <div id="svg" class="step">
         <h2>简单介绍一下svg</h2>
-        <p>SVG可缩放矢量图形（Scalable Vector Graphics）是基于可扩展标记语言（XML），用于描述二维矢量图形的一种图形格式。SVG是W3C制定的一种新的二维矢量图形格式，也是规范中的网络矢量图形标准。SVG严格遵从XML语法，并用文本格式的描述性语言来描述图像内容，因此是一种和图像分辨率无关的矢量图形格式。</p>
+        <p>SVG（Scalable Vector Graphics）是基于可扩展标记语言（XML），用于描述二维矢量图形的一种图形格式。SVG是W3C制定的一种新的二维矢量图形格式，也是规范中的网络矢量图形标准。SVG严格遵从XML语法，并用文本格式的描述性语言来描述图像内容，因此是一种和图像分辨率无关的矢量图形格式。</p>
         <img class="block" src="img/svg_support.png" alt="">
-    </div>    
-
-    <div class="step">
-        <h2>基本图形</h2>
-        <img class="block" src="img/svg.png">
         <a target="_blank" href="http://codepen.io/JasonTurbo/pen/xVzoPY">
             https://codepen.io/JasonTurbo/pen/xVzoPY
         </a>
-    </div>        
+    </div>    
+
+   <!--  <div class="step">
+        <h2>基本图形</h2>
+        <img class="block" src="img/svg.png">
+    </div>   -->      
 
 
 
@@ -275,7 +341,7 @@ $('.slider').addScroll({
     <div id="modernizr" class="step">
         <h2>使用 Modernizr 特性检测做兼容</h2>
         <p>css</p>
-<pre><code class="stylesheet">
+<pre><code class="javascript">
 .no-borderradius {
     // 如果不支持 borderradius 怎样怎样
 }
@@ -296,6 +362,14 @@ if (Modernizr.video) {
         <a href="https://modernizr.com/">https://modernizr.com/</a>     
     </div>    
 
+    <div class="step">
+        <h2>Q&A</h2>
+    </div>
+
+
+    <div class="step">
+        <h2>End</h2>
+    </div>
 
     <!-- <div id="overview" class="step" data-x="0" data-y="0" data-scale="2"></div> -->
 </div>

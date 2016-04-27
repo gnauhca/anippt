@@ -340,15 +340,10 @@ a {
   color: inherit;
   text-decoration: none;
   padding: 0 0.1em;
-  text-shadow: -1px -1px 2px rgba(100, 100, 100, 0.9);
   border-radius: 0.2em;
   color: #abcdef;
   transition: 0.5s;
   font-size: 18px; }
-
-a:hover,
-a:focus {
-  text-shadow: -1px -1px 2px rgba(25, 25, 25, 0.5); }
 
 /*
     Because the main point behind the impress.js demo is to demo impress.js
@@ -376,12 +371,16 @@ a:focus {
     line-height: 2; }
   .step p {
     font-size: 22px;
+    color: #eee;
     line-height: 1.6; }
   .step code {
     font-size: 20px;
     margin: 20px 0; }
   .step .block {
     margin: 20px 0; }
+  .step .item {
+    font-size: 26px;
+    color: #eee; }
   .step.center, .step .center {
     text-align: center; }
   .step img {
@@ -394,7 +393,7 @@ a:focus {
 */
 .impress-enabled .step {
   margin: 0;
-  opacity: 0.02;
+  opacity: 0;
   transition: opacity 1s; }
 
 .impress-enabled .step.active {
@@ -511,66 +510,6 @@ a:focus {
       transition: transform 0.5s 0.54s, opacity 0.5s 0.54s; }
     .menu ul li:nth-child(19) {
       transition: transform 0.5s 0.57s, opacity 0.5s 0.57s; }
-    .menu ul li:nth-child(20) {
-      transition: transform 0.5s 0.6s, opacity 0.5s 0.6s; }
-    .menu ul li:nth-child(21) {
-      transition: transform 0.5s 0.63s, opacity 0.5s 0.63s; }
-    .menu ul li:nth-child(22) {
-      transition: transform 0.5s 0.66s, opacity 0.5s 0.66s; }
-    .menu ul li:nth-child(23) {
-      transition: transform 0.5s 0.69s, opacity 0.5s 0.69s; }
-    .menu ul li:nth-child(24) {
-      transition: transform 0.5s 0.72s, opacity 0.5s 0.72s; }
-    .menu ul li:nth-child(25) {
-      transition: transform 0.5s 0.75s, opacity 0.5s 0.75s; }
-    .menu ul li:nth-child(26) {
-      transition: transform 0.5s 0.78s, opacity 0.5s 0.78s; }
-    .menu ul li:nth-child(27) {
-      transition: transform 0.5s 0.81s, opacity 0.5s 0.81s; }
-    .menu ul li:nth-child(28) {
-      transition: transform 0.5s 0.84s, opacity 0.5s 0.84s; }
-    .menu ul li:nth-child(29) {
-      transition: transform 0.5s 0.87s, opacity 0.5s 0.87s; }
-    .menu ul li:nth-child(30) {
-      transition: transform 0.5s 0.9s, opacity 0.5s 0.9s; }
-    .menu ul li:nth-child(31) {
-      transition: transform 0.5s 0.93s, opacity 0.5s 0.93s; }
-    .menu ul li:nth-child(32) {
-      transition: transform 0.5s 0.96s, opacity 0.5s 0.96s; }
-    .menu ul li:nth-child(33) {
-      transition: transform 0.5s 0.99s, opacity 0.5s 0.99s; }
-    .menu ul li:nth-child(34) {
-      transition: transform 0.5s 1.02s, opacity 0.5s 1.02s; }
-    .menu ul li:nth-child(35) {
-      transition: transform 0.5s 1.05s, opacity 0.5s 1.05s; }
-    .menu ul li:nth-child(36) {
-      transition: transform 0.5s 1.08s, opacity 0.5s 1.08s; }
-    .menu ul li:nth-child(37) {
-      transition: transform 0.5s 1.11s, opacity 0.5s 1.11s; }
-    .menu ul li:nth-child(38) {
-      transition: transform 0.5s 1.14s, opacity 0.5s 1.14s; }
-    .menu ul li:nth-child(39) {
-      transition: transform 0.5s 1.17s, opacity 0.5s 1.17s; }
-    .menu ul li:nth-child(40) {
-      transition: transform 0.5s 1.2s, opacity 0.5s 1.2s; }
-    .menu ul li:nth-child(41) {
-      transition: transform 0.5s 1.23s, opacity 0.5s 1.23s; }
-    .menu ul li:nth-child(42) {
-      transition: transform 0.5s 1.26s, opacity 0.5s 1.26s; }
-    .menu ul li:nth-child(43) {
-      transition: transform 0.5s 1.29s, opacity 0.5s 1.29s; }
-    .menu ul li:nth-child(44) {
-      transition: transform 0.5s 1.32s, opacity 0.5s 1.32s; }
-    .menu ul li:nth-child(45) {
-      transition: transform 0.5s 1.35s, opacity 0.5s 1.35s; }
-    .menu ul li:nth-child(46) {
-      transition: transform 0.5s 1.38s, opacity 0.5s 1.38s; }
-    .menu ul li:nth-child(47) {
-      transition: transform 0.5s 1.41s, opacity 0.5s 1.41s; }
-    .menu ul li:nth-child(48) {
-      transition: transform 0.5s 1.44s, opacity 0.5s 1.44s; }
-    .menu ul li:nth-child(49) {
-      transition: transform 0.5s 1.47s, opacity 0.5s 1.47s; }
 
 .menu-show .menu ul li {
   opacity: 1;
